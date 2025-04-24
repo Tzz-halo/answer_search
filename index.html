@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>形势与政策题目答案搜索</title>
+  <title>题目搜索</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -15,17 +15,37 @@
       text-align: center;
       color: #333;
     }
+
+    .textx{
+        text-align: center;
+        color: #333;
+    }
+
     .search-container {
       max-width: 600px;
       margin: 20px auto;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     input[type="text"] {
-      width: 80%;
+      width: calc(80% - 20px);
       padding: 10px;
-      margin-bottom: 20px;
+      margin-right: 10px;
       border: 1px solid #ccc;
       border-radius: 4px;
+    }
+    button.clear-button {
+      padding: 10px 15px;
+      border: none;
+      background-color: #ffffff;
+      color: white;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button.clear-button:hover {
+      background-color: #ff6e6e;
     }
     .question {
       background-color: #fff;
@@ -45,10 +65,12 @@
 </head>
 <body>
 
-<h1><p>Power BY Tzz BikD_241003❤</p></h1>
-
+<h1>形势与政策答案搜索</h1>
+<p class="textx">🌹</p>
+<p class="textx">Power By Tzz DikB_241003</p>
 <div class="search-container">
   <input type="text" id="searchInput" placeholder="请输入题目关键词..." onkeyup="filterQuestions()">
+  <button class="clear-button" onclick="clearSearch()">❌</button>
 </div>
 
 <div id="questionsContainer">
@@ -1010,9 +1032,18 @@
     renderQuestions(filteredQuestions);
   }
 
+  function clearSearch() {
+    const searchInput = document.getElementById("searchInput");
+    searchInput.value = ""; // 清空输入框
+    renderQuestions(questionsData); // 显示所有题目
+  }
+
   // 初始化显示所有题目
   window.onload = () => renderQuestions(questionsData);
 </script>
 
 </body>
 </html>
+
+
+
